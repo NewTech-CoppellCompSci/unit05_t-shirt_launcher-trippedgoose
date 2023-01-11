@@ -32,9 +32,20 @@ public class Performance_Task {
 			
 			
 			if (yPos < 0) {
-				
 				yPos = 0;
+				double t1 = (-1 * Math.sin(Math.toRadians(launchA)) * launchV  
+						+ Math.sqrt(Math.pow(Math.sin(Math.toRadians(launchA)) * launchV, 2) - (4 * (-4.9) * (-1* yPos))))
+						/-9.8;
+				double t2 = (-1 * Math.sin(Math.toRadians(launchA)) * launchV 
+						- Math.sqrt(Math.pow(Math.sin(Math.toRadians(launchA)) * launchV, 2) - (4 * (-4.9) * (-1 * yPos))))
+						/-9.8;
+				
+				double t = Math.max(t1, t2);
+				
+				xPos = Math.cos(Math.toRadians(launchA)) * launchV * t;
+				
 				finished = true;
+
 			}
 			
 			
